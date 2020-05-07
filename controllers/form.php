@@ -14,7 +14,7 @@
             $program    = $_POST['program'];
             $name       = $_POST['name'];
             $date       = date("Y-m-d");
-            
+             
 
             if($this->model->insert(['mail' => $mail, 'idnum' => $idnum, 'program' => $program, 'name' => $name, 'date' => $date])){
                 echo 'Primer paso acceptado.';
