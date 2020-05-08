@@ -16,7 +16,7 @@
                     'name'      => $data['name'],
                     'date'      => $data['date']
                 ]);
-                var_dump($query);
+                
                 return true;
             } catch (PDOException $err) {
                 return false;

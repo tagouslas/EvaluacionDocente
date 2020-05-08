@@ -2,8 +2,11 @@
     class main extends Controller{
         function __construct(){
             parent::__construct();
-            $this->view->render('main/index');
             //echo '<p>A new controller Main has created.</p>';
+        }
+
+        function render(){
+            $this->view->render('main/index');
         }
 
         function saludo(){

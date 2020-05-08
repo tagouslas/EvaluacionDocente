@@ -3,8 +3,11 @@
     class Form extends Controller{
         function __construct(){
             parent::__construct();
+            $this->view->message = "";         
+        }
+
+        function render(){
             $this->view->render('form/index');
-            
         }
 
         function firstStep(){
@@ -13,14 +16,18 @@
             $idnum      = $_POST['idnum'];
             $program    = $_POST['program'];
             $name       = $_POST['name'];
-            $date       = date("Y-m-d");
+            $date       = date("Y-m-d h:i:sa");
              
+            $message = "";
 
             if($this->model->insert(['mail' => $mail, 'idnum' => $idnum, 'program' => $program, 'name' => $name, 'date' => $date])){
-                echo 'Primer paso acceptado.';
+                $message = "Nuevo formulario creado";
             }else{
-                echo '<br>Error of insertion.';
+                $message = "Ya usted ha hecho este formulario.";
             }
+
+            $this->view->message = $message;
+            $this->render();
         }
     }
 ?>

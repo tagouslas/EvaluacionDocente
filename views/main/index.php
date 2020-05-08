@@ -3,7 +3,7 @@
 
 <main id="main">
     <div class="container">
-        <h1 class="center">Bienvenido al sitio</h1>
+        <h1 class="center">Bienvenido al sitio de Evaluación</h1>
     </div>
 </main>
 

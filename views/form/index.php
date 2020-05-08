@@ -4,6 +4,10 @@
         <div class="container">
             <h1 class="center">Evaluación Docente - Universitaria Virtual Internacional</h1>
         </div>
+
+        <div class="container center">
+            <?php echo $this->message; ?>
+        </div>
         
         <div class="myform container ">
             
