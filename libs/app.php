@@ -1,4 +1,4 @@
-<? 
+<?php 
 require_once 'controllers/errors.php';
 
 class App

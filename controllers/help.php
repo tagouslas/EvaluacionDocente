@@ -1,4 +1,4 @@
-<? 
+<?php 
     class Help extends Controller{
         
         function __construct()

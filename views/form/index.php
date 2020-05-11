@@ -21,54 +21,23 @@
                     
                 </fieldset>
                 
+
+                <?php 
+                        include_once 'models/q_category.php';
+
+                        foreach ($this->qcategories as $row) {
+                        $qcategory = new QCategory();
+                        $qcategory = $row;
+                    ?>
                 <fieldset>
-                    <?php require 'views/form/step2.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
+                    
+                        <?php require 'views/form/step2.php'; ?>
+                        <input type="button"  class="previous btn btn-secondary" value="Previous" />
+                        <input type="button"  class="next btn btn-info" value="Next" />
                     
                 </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step3.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step4.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step5.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step6.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step7.php'; ?>
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-                <fieldset>
-                    <?php require 'views/form/step8.php'; ?>
-                    <input type="button" class="previous btn btn-secondary" value="Previous" />
-                    
-                </fieldset>
-                
+                <?php }?>
+
             </form>
             <br>          
         </div>

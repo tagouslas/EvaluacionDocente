@@ -3,11 +3,16 @@
     class Form extends Controller{
         function __construct(){
             parent::__construct();
-            $this->view->message = "";         
+            $this->view->message = "";      
+            $this->view->questions = [];   
         }
 
         function render(){
-            $this->view->render('form/index');
+           
+            $this->get_questions();
+            $this->get_qcategories();
+            $this->get_qtypes();
+            $this->view->render('form/index'); 
         }
 
         function firstStep(){
@@ -28,6 +33,22 @@
 
             $this->view->message = $message;
             $this->render();
+        }
+
+        function get_questions(){
+            $questions = $this->model->get_questions();
+            $this->view->questions = $questions;           
+        }
+
+        function get_qcategories(){
+            $qcategories = $this->model->get_qcategories();
+            $this->view->qcategories = $qcategories;
+            
+        }
+
+        function get_qtypes(){
+            $qtypes = $this->model->get_qtypes();
+            $this->view->qtypes = $qtypes;           
         }
     }
 ?>

@@ -1,5 +1,9 @@
 <?php 
 
+    include_once 'models/question.php';
+    include_once 'models/g_category.php';
+    include_once 'models/g_type.php';
+
     class FormModel extends Model
     {
         public function __construct(){
@@ -22,10 +26,74 @@
                 return false;
                 print_r($err);
             }
-            
-            
+        }
 
+        public function get_questions(){
+            $items = [];
 
+            try {
+                
+                $query = $this->db->connect()->query("SELECT * FROM Questions;");
+
+                while ($row = $query->fetch()) {
+                    $item = new Question();
+                    $item->id = $row['id'];
+                    $item->value = $row['value'];
+                    $item->type = $row['type'];
+                    $item->category = $row['category'];
+
+                    array_push($items, $item);
+                }
+
+                return $items;
+
+            } catch (PDOException $err) {
+                return[];
+            }
+        }
+
+        public function get_qtypes(){
+            $items = [];
+
+            try {
+                
+                $query = $this->db->connect()->query("SELECT * FROM Questions_Types;");
+
+                while ($row = $query->fetch()) {
+                    $item = new QType();
+                    $item->id = $row['id'];
+                    $item->value = $row['value'];
+
+                    array_push($items, $item);
+                }
+
+                return $items;
+
+            } catch (PDOException $err) {
+                return[];
+            }
+        }
+
+        public function get_qcategories(){
+            $items = [];
+
+            try {
+                
+                $query = $this->db->connect()->query("SELECT * FROM Question_Categories;");
+
+                while ($row = $query->fetch()) {
+                    $item = new QCategory();
+                    $item->id = $row['id'];
+                    $item->value = $row['value'];
+
+                    array_push($items, $item);
+                }
+
+                return $items;
+
+            } catch (PDOException $err) {
+                return[];
+            }
         }
     }
 ?>
