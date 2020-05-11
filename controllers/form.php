@@ -16,7 +16,7 @@
             $idnum      = $_POST['idnum'];
             $program    = $_POST['program'];
             $name       = $_POST['name'];
-            $date       = date("Y-m-d h:i:sa");
+            $date       = date("Y-m-d");
              
             $message = "";
 

@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/default.css">
 </head>
 <body>
-    <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
-            <a class="navbar-brand" href="main">EVAD</a>
+    <header id="header" class="mybox-shadow">
+        <nav id="mynav" class="navbar navbar-expand-lg navbar-light bg-light container">
+            <a class="navbar-brand" href="main">
+                <img src="<?php echo constant('URL'); ?>public/img/logouvirtual2.png" alt="" width="300px" height="auto">
+            </a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
