@@ -1,6 +1,5 @@
 <?php 
-    class Question{
-        
+    class Question{       
         public $id;
         public $value;
         public $type;

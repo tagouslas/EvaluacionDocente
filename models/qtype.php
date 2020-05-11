@@ -1,6 +1,5 @@
 <?php 
-    class QType{
-        
+    class QType{       
         public $id;
         public $value;
     }

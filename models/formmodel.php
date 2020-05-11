@@ -1,8 +1,8 @@
 <?php 
 
     include_once 'models/question.php';
-    include_once 'models/g_category.php';
-    include_once 'models/g_type.php';
+    include_once 'models/gcategory.php';
+    include_once 'models/gtype.php';
 
     class FormModel extends Model
     {

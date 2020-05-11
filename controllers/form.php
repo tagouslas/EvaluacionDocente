@@ -9,9 +9,9 @@
 
         function render(){
            
-            $this->get_questions();
+            //$this->get_questions();
             $this->get_qcategories();
-            $this->get_qtypes();
+            //$this->get_qtypes();
             $this->view->render('form/index'); 
         }
 

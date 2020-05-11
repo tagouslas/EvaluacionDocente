@@ -23,7 +23,7 @@
                 
 
                 <?php 
-                        include_once 'models/q_category.php';
+                        include_once 'models/qcategory.php';
 
                         foreach ($this->qcategories as $row) {
                         $qcategory = new QCategory();
