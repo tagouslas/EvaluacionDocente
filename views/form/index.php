@@ -25,16 +25,32 @@
                 <?php 
                         include_once 'models/qcategory.php';
 
-                        foreach ($this->qcategories as $row) {
-                        $qcategory = new QCategory();
-                        $qcategory = $row;
+                        foreach ($this->categories as $row) {
+                            $category = new QCategory();
+                            $category = $row;
                     ?>
                 <fieldset>
-                    
-                        <?php require 'views/form/step2.php'; ?>
-                        <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                        <input type="button"  class="next btn btn-info" value="Next" />
-                    
+                <br>
+                    <div class="jumbotron">
+                        <h3><?php echo $category->value ?></h3>
+
+                        <?php 
+                        include_once 'models/question.php';
+
+                        foreach ($this->questions as $row) {
+                            $question = new Question();
+                            $question = $row;
+
+                            if ($question->category == $category->id) {
+                        ?>
+                            
+                            <p><?php echo $question->value ?></p>
+
+                        <?php }} ?>
+                    </div>
+                        
+                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
+                    <input type="button"  class="next btn btn-info" value="Next" />
                 </fieldset>
                 <?php }?>
 

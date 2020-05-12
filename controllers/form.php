@@ -9,9 +9,8 @@
 
         function render(){
            
-            //$this->get_questions();
-            $this->get_qcategories();
-            //$this->get_qtypes();
+            $this->listQuestion();
+            $this->listCategories();
             $this->view->render('form/index'); 
         }
 
@@ -35,20 +34,14 @@
             $this->render();
         }
 
-        function get_questions(){
+        function listQuestion(){
             $questions = $this->model->get_questions();
             $this->view->questions = $questions;           
         }
 
-        function get_qcategories(){
-            $qcategories = $this->model->get_qcategories();
-            $this->view->qcategories = $qcategories;
-            
-        }
-
-        function get_qtypes(){
-            $qtypes = $this->model->get_qtypes();
-            $this->view->qtypes = $qtypes;           
+        function listCategories(){
+            $categories = $this->model->get_qcategories();
+            $this->view->categories = $categories;           
         }
     }
 ?>

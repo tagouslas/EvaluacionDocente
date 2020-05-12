@@ -1,8 +1,7 @@
 <?php 
 
     include_once 'models/question.php';
-    include_once 'models/gcategory.php';
-    include_once 'models/gtype.php';
+    include_once 'models/qcategory.php';
 
     class FormModel extends Model
     {
@@ -52,28 +51,6 @@
             }
         }
 
-        public function get_qtypes(){
-            $items = [];
-
-            try {
-                
-                $query = $this->db->connect()->query("SELECT * FROM Questions_Types;");
-
-                while ($row = $query->fetch()) {
-                    $item = new QType();
-                    $item->id = $row['id'];
-                    $item->value = $row['value'];
-
-                    array_push($items, $item);
-                }
-
-                return $items;
-
-            } catch (PDOException $err) {
-                return[];
-            }
-        }
-
         public function get_qcategories(){
             $items = [];
 
@@ -95,5 +72,6 @@
                 return[];
             }
         }
+        
     }
 ?>
