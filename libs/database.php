@@ -25,7 +25,7 @@
                     PDO::ATTR_EMULATE_PREPARES  => false,
                 ];
                 $pdo = new PDO($connection, $this->user, $this->password, $options);
-                print_r('Connected');
+                
                 return $pdo;
             }catch(PDOException $err){
                 print_r('Error of connection: '. $err->getMessage());

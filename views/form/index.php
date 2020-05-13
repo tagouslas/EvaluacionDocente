@@ -1,62 +1,12 @@
 <?php require 'views/header.php'; ?>
 
     <main id="main">
+    
+        <div class="myform container">       
+            <?php require 'views/form/step1.php'; ?>     
+                    
+        </div>
         <br>
-        <div class="container">
-            <h1 class="center">Evaluación Docente - Universitaria Virtual Internacional</h1>
-        </div>
-
-        <div class="container center">
-            <?php echo $this->message; ?>
-        </div>
-        
-        <div class="myform container">
-            
-            
-            <form id="regiration_form" action="<?php echo constant('URL'); ?>form/firstStep" method="POST">
-                <fieldset>
-                    <?php require 'views/form/step1.php'; ?>
-                    
-                    <input type="button" class="next btn btn-info" value="Next" />
-                    
-                </fieldset>
-                
-
-                <?php 
-                        include_once 'models/qcategory.php';
-
-                        foreach ($this->categories as $row) {
-                            $category = new QCategory();
-                            $category = $row;
-                    ?>
-                <fieldset>
-                <br>
-                    <div class="jumbotron">
-                        <h3><?php echo $category->value ?></h3>
-
-                        <?php 
-                        include_once 'models/question.php';
-
-                        foreach ($this->questions as $row) {
-                            $question = new Question();
-                            $question = $row;
-
-                            if ($question->category == $category->id) {
-                        ?>
-                            
-                            <p><?php echo $question->value ?></p>
-
-                        <?php }} ?>
-                    </div>
-                        
-                    <input type="button"  class="previous btn btn-secondary" value="Previous" />
-                    <input type="button"  class="next btn btn-info" value="Next" />
-                </fieldset>
-                <?php }?>
-
-            </form>
-            <br>          
-        </div>
     </main>
 
 <?php require 'views/footer.php'; ?>
