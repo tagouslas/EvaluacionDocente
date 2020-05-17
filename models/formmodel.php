@@ -1,10 +1,9 @@
 <?php 
 
-    include_once 'models/question.php';
-    include_once 'models/qcategory.php';
-    include_once 'models/qtype.php';
-    include_once 'models/form.php';
-
+    include_once 'models/questionClass.php';
+    include_once 'models/categoryClass.php';
+    include_once 'models/typeClass.php';
+    include_once 'models/formClass.php';
     class FormModel extends Model
     {
         public function __construct(){
@@ -20,6 +19,37 @@
                     'program'   => $data['program'], 
                     'name'      => $data['name'],
                     'date'      => $data['date']
+                ]);
+                
+                return true;
+            } catch (PDOException $err) {
+                return false;
+                print_r($err);
+            }
+        }
+
+        public function insertResponseDatas($data){
+            try {
+                $query = $this->db->connect()->prepare('INSERT INTO Responses (value, id_question, id_form) VALUES(:value, :id_question, :id_form);');
+                $query->execute([
+                    'value'         => $data['value'], 
+                    'id_question'   => $data['id_question'], 
+                    'id_form'       => $data['id_form'] 
+                ]);
+                
+                return true;
+            } catch (PDOException $err) {
+                return false;
+                print_r($err);
+            }
+        }
+
+        public function insertCommentDatas($data){
+            try {
+                $query = $this->db->connect()->prepare('INSERT INTO Comments (value, id_form) VALUES(:value, :id_form);');
+                $query->execute([
+                    'value'         => $data['value'], 
+                    'id_form'       => $data['id_form'] 
                 ]);
                 
                 return true;
@@ -56,31 +86,26 @@
         }
 
         public function get_formByIdnum($idnum){
-            try {
-                $item = [];
+            $item = new FormClass();
 
-                $query = $this->db->connect()->query("SELECT * FROM Forms WHERE identification_num = $idnum;");
+            $query = $this->db->connect()->prepare('SELECT * FROM Forms WHERE identification_num = :idnum');
 
-                while ($row = $query->fetch()) {
-                    $item = new FormClass();
-                    $item->id = $row['id'];
-                    $item->mail = $row['mail'];
-                    $item->identification_num = $row['identification_num'];
-                    $item->academic_program = $row['academic_program'];
-                    $item->submitter_name = $row['submitter_name'];
-                    $item->created_at = $row['created_at'];
+            try{
+                $query->execute(['idnum' => $idnum]);
+
+                while($row = $query->fetch()){
+                    $item->id                   = $row['id'];
+                    $item->mail                 = $row['mail'];
+                    $item->identification_num   = $row['identification_num'];
+                    $item->academic_program     = $row['academic_program'];
+                    $item->submitter_name       = $row['submitter_name'];
+                    $item->created_at           = $row['created_at'];
                 }
 
-                if ($item == null) {
-                    return 0;
-                }else{
-                    return $item;
-                }
-
-                
+                return $item;
 
             } catch (PDOException $err) {
-                return[];
+                return null;
             }
         }
 

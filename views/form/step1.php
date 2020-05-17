@@ -1,5 +1,5 @@
 <fieldset>
-<form id="regiration_form" action="<?php echo constant('URL'); ?>form/complete" method="POST">
+<form id="registration_form" action="<?php echo constant('URL'); ?>form/verif" method="POST">
 
     <?php echo $this->message; ?>
     
@@ -33,5 +33,5 @@
 
     <input type="submit" class="btn btn-success" value="Verificar sus datos" />
 </form>
-    <?php echo $this->next; ?>
+       
 </fieldset>

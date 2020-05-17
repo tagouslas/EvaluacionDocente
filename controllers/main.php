@@ -9,9 +9,5 @@
             $this->view->render('main/index');
         }
 
-        function saludo(){
-            echo '<p>You are executed the saludo fonction.</p>';
-        }
-
     }
 ?>

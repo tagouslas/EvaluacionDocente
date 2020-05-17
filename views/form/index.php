@@ -2,22 +2,21 @@
 
     <main id="main">
     
-        <div class="myform container">       
-            <?php require 'views/form/step1.php'; ?>     
-                    
+        <div class="myform container">
+            <?php require 'views/form/step1.php'; ?>         
         </div>
         <br>
     </main>
 
 <?php require 'views/footer.php'; ?>
 
-<style type="text/css">
-        #regiration_form fieldset:not(:first-of-type) {
+<!-- <style type="text/css">
+        #registration_form fieldset:not(:first-of-type) {
             display: none;
         }
-</style>
+</style> -->
 
-<script>
+<!-- <script>
         $(document).ready(function () {
             var current = 1, current_step, next_step, steps;
             steps = $("fieldset").length;
@@ -45,4 +44,4 @@
                         .html(percent + "%");
             }
         });
-    </script>
+    </script> -->

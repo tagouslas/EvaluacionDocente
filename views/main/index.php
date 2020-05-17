@@ -11,7 +11,11 @@
         <!-- Sección Descripción -->
         <div class="jumbotron">
             <div class="container justify">
+                
                 <h3>Apreciado docente-tutor,</h3>
+                <br>
+                <a class="btn btn-success" href="<?php echo constant('URL'); ?>form">Empezar un nuevo formulario</a>
+                <br>
                 <br>
                 <p>La siguiente autoevaluación nos permitirá conocer la percepción de tu desempeño y acompañamiento en el proceso formativo de nuestros estudiantes. Tus respuestas nos servirán para diseñar e implementar acciones que mejoren la calidad educativa de la Universitaria Virtual Internacional.</p>
                 <br>
@@ -31,7 +35,7 @@
                 </p>
                 
             </div>
-            <a class="btn btn-success" href="<?php echo constant('URL'); ?>form">Empezar un nuevo formulario</a>
+            
         </div>
         <!-- Fín de la Sección Descripción -->
 

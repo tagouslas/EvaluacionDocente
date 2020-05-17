@@ -3,7 +3,7 @@
 
     <main id="main">
         <div class="container">
-            <h1 class="error center"><?php echo $this->mensaje; ?></h1>
+            <h1 class="error center"><?php echo $this->message; ?></h1>
         </div>
     </main>
 

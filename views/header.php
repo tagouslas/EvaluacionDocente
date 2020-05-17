@@ -21,19 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo constant('URL'); ?>main">Inicio</a>
+                        <a class=" btn mybtn" href="<?php echo constant('URL'); ?>main">Empezar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo constant('URL'); ?>form">Formulario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true" href="<?php echo constant('URL'); ?>help">Ayuda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo constant('URL'); ?>cuenta" aria-disabled="true">Mí Cuenta</a>
+                        <a class="nav-link disabled" href="<?php echo constant('URL'); ?>cuenta" aria-disabled="true">Cuenta admin</a>
                     </li>
                 </ul>
-            </div>3
+            </div>
         </nav>
     </header>
     <br>
