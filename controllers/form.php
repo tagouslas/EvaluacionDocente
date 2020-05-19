@@ -38,10 +38,8 @@
             $message = "";
 
             if($this->model->insertFormDatas(['mail' => $mail, 'idnum' => $idnum, 'program' => $program, 'name' => $name, 'date' => $date])){
-                $message = '<div class="jumbotron">
-                                <h3>Nuevo formulario creado.</h3>
-                                <a class="btn btn-success" href="'.constant("URL").'form/showQuiz/'.$idnum.'">Empezar la evaluación</a>
-                            </div>';
+                $this->showQuiz($idnum);
+                $message = "Nuevo Formulario creado.";
                 $this->view->message = $message;
                 $this->render();
             }else{
@@ -117,7 +115,7 @@
         }
 
         function showQuiz($param = null){
-            $idForm = $param[0];
+            $idForm = $param;
             $form = new FormClass();
             $form = $this->model->get_formByIdnum($idForm);
             

@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class=" btn mybtn" href="<?php echo constant('URL'); ?>main">Empezar</a>
+                        <a class=" btn mybtn" href="<?php echo constant('URL'); ?>main">Empezar un formulario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo constant('URL'); ?>cuenta" aria-disabled="true">Cuenta admin</a>
+                        <a class="nav-link" href="<?php echo constant('URL'); ?>admin">Administrador</a>
                     </li>
                 </ul>
             </div>
