@@ -24,7 +24,7 @@
                         <a class=" btn mybtn" href="<?php echo constant('URL'); ?>main">Empezar un formulario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo constant('URL'); ?>admin">Administrador</a>
+                        <a class="nav-link" href="login">Conectarse</a>
                     </li>
                 </ul>
             </div>
